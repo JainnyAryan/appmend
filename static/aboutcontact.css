@@ -1,0 +1,24 @@
+
+.a2 img{
+    width:4vw;
+}
+.abtct{
+    display:flex;
+    width:100%;
+    margin-top: 10vw;;
+}
+.abtct >     div{    
+    background-color: #6daffe;
+    margin:10px;
+
+    border-radius: 1vw;
+}
+.title{
+    text-align: center;
+    color:  #edf6ff;
+    font-family: 'DM Sans';
+}
+.a1,.a2{
+    text-align: center;
+    font-family: 'DM Sans';
+}

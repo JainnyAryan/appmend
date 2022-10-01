@@ -1,0 +1,43 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Sign up</title>    
+    <link rel="stylesheet" type="text/css" href="../static/signup.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
+</head>    
+<body>    
+    <h2></h2><br>    
+    <div class="login">    
+    <form id="login" method="post" action="/loginsignup">
+        <label for="" class="lofo">SIGN UP<span style="color: red; padding-left: 3vw; font-size: 1.5vw">{{alert}}
+        </span></label><br><br>
+        <label><b class="namee">Username     
+        </b> <br>  <br> 
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username" required>    
+        <br><br>    
+        <label><b class="namee">Full Name     
+        </b> <br>  <br> 
+        </label>    
+        <input type="text" name="name" id="Uname" placeholder="Full Name" required>    
+        <br><br>    
+        <label><b class="namee">Email     
+        </b> <br>  <br> 
+        </label>    
+        <input type="email" name="Email" id="Uname" placeholder="Email" required>    
+        <br><br>    
+        <label><b class="namee">Password     
+        </b> <br> <br> 
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password" required>    
+        <br><br>
+        <input type="hidden" value="1" name="signup">    
+        <input type="submit" name="log" id="log" value="Sign up">       
+        <br><br>        
+        <!-- <p class="fpass">By clicking the "Sign up" button, you are creating an account, and <br> agree to W3Schools' Terms of Service and Privacy Policy</p>     -->
+    </form>     
+</div>    
+</body>    
+</html>

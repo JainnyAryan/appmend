@@ -1,0 +1,112 @@
+.menu-bar{
+    /* padding-top: 0.vh; */
+    /* border-radius: 5px; */
+    height: 4.3vw;
+    display: flex;
+    width: 99.9%;
+    float: top;
+    background-color: #f0eff4;
+    box-shadow: 0px 1vh 5px rgba(0, 0, 0, 0.383);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    margin-bottom: 12.8vh;
+}
+.menu-bar-table{
+    height: 4vw;
+    display: flex;
+    flex-grow: 4;
+}
+
+.logo{
+    height: 4vw; 
+    border-top-left-radius: 2.5px;
+    border-bottom-left-radius: 2.5px;
+}
+
+table{
+    border-spacing: 30px 4px;
+}
+
+td{
+    padding: 0px 0px;
+    width: 10vw;
+    font-size: small;
+}
+
+.button-bg{
+    width: 10vw;
+    background-color: #233dff;
+    text-align: center;
+    margin: auto;
+    transition: 0.2s;
+    height: 1px;
+    color: #050a30;
+    font-size: 1vw;
+}
+
+.app-bar-link:link{
+    color: white;
+    text-decoration: none;
+}
+.app-bar-link:visited{
+    color: white;
+    text-decoration: none;
+}
+
+
+td:hover .button-bg{
+    width: 10vw;
+    height: 3.8vw;
+    font-weight: bolder;
+    color: white;
+}
+
+.dashboard_btn{
+    font-size: 1vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+td:hover .dashboard_btn{
+    width: 10vw;
+    height: 3.8vw;
+    font-weight: bolder;
+    color: white;
+}
+
+
+.logup{
+    background-color: #233dff; 
+    color: white; 
+    margin: 1vh; 
+    border-radius: 0.2vw; 
+    display: flex;
+    flex: 1;
+    text-align: center;
+    width: auto;
+    border: 1px solid white;
+    transition-duration: 0.3s;
+}
+
+.logup a{
+    margin: auto;
+    font-size: 1vw;
+    color: white;
+    text-decoration: none;
+}
+
+.logup:hover{
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #437fc7;
+    cursor: pointer;
+}
+
+.logup:hover .logup-link{
+    color: #437fc7;
+    text-decoration: none;
+}
+.logup a:visited{
+    color: white;
+    text-decoration: none;
+}

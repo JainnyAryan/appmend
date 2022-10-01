@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <title>Dashboard</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+</head>
+<body>
+    <div class="bg">
+        <div class="menu-bar">
+            <a href="{{ url_for('home') }}"><img src="../static/logo-wide1.png" class="logo" alt="logo"></a>
+            <div class="menu-bar-table">
+                <table>
+                    <tr>
+                        <td>
+                            <form action="/dashboard" method="post">
+                                <div class="button-bg">
+                                    <input type="submit" value="DASHBOARD" class = "dashboard_btn" style="background-color: rgba(0,0,0,0); border: none;">
+                                </div>
+                            </form>
+                    </td>
+                    
+                    
+                    </tr>
+                </table>
+            </div>
+            <span style="padding: 0.5vw; padding-top: 1vw;">Welcome : {{username}}</span>
+            <div class="logup" style="flex: 1.5;"><a href="{{ url_for('home') }}" class="logup-link">SIGN OUT</a></div>         
+        </div>
+
+        <div class="boxes">
+            <div class="box" style="margin-top: 5.5vw;">
+                <h1 style="text-align: center;">
+                    Amend trend
+                </h1>
+                <!-- <img src="../static/graph.jpg" height="300px" style="padding-left: 25px;"> -->
+                <canvas id="chart" style="height: 25vw; width: 45vw; padding-left: 0.7vw;"></canvas>
+
+                <script>
+                // bar chart data
+                var barData = {
+                    labels : [
+                    {% for item in labels %}
+                        "{{ item }}",
+                    {% endfor %}
+                    ],
+
+                    datasets : [{
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    bezierCurve : false,
+                    data : [
+                    {% for item in values %}
+                        {{ item }},
+                        {% endfor %}]
+                    }
+                ]
+                }
+                Chart.defaults.global.animationSteps = 50;
+                Chart.defaults.global.tooltipYPadding = 16;
+                Chart.defaults.global.tooltipCornerRadius = 0;
+                Chart.defaults.global.tooltipTitleFontStyle = "normal";
+                Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+                Chart.defaults.global.animationEasing = "easeOutBounce";
+                Chart.defaults.global.responsive = false;
+                Chart.defaults.global.scaleLineColor = "black";
+                Chart.defaults.global.scaleFontSize = 16;
+                // get bar chart canvas
+                var mychart = document.getElementById("chart").getContext("2d");
+                steps = 10
+                max = 20
+                // draw bar chart
+                var LineChartDemo = new Chart(mychart).Line(barData, {
+                    scaleOverride: true,
+                    scaleSteps: steps,
+                    scaleStepWidth: Math.ceil(max / steps),
+                    scaleStartValue: 0,
+                    scaleShowVerticalLines: true,
+                    scaleShowGridLines : true,
+                    barShowStroke : true,
+                    scaleShowLabels: true,
+                    bezierCurve: false,
+                });
+                </script>
+
+                <div style="align-content: center; width: 100%;">
+                    <form action="/amend" method="post" style="margin:0 auto; display: table;">
+                        <input type="submit" value="AmendPanel(Issues and feedbacks)" class="button-for-panel">
+                    </form>
+                </div>
+            </div>
+
+            <div class="box" style="margin-top: 5.5vw;">
+                <h1 style="text-align: center;">
+                    Append trend
+                </h1>
+                <canvas id="chart1" style="height: 25vw; width: 45vw; padding-left: 0.7vw;"></canvas>
+                
+                <script>
+                // bar chart data
+                var barData = {
+                    labels : [
+                    {% for item in labels1 %}
+                        "{{ item }}",
+                    {% endfor %}
+                    ],
+
+                    datasets : [{
+                    fillColor: "rgba(242, 39, 52, 0.2)",
+                    strokeColor: "rgba(242, 39, 52, 1)",
+                    pointColor: "rgba(242, 39, 52, 1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    bezierCurve : false,
+                    data : [
+                    {% for item in values1 %}
+                        {{ item }},
+                        {% endfor %}]
+                    }
+                ]
+                }
+                Chart.defaults.global.animationSteps = 50;
+                Chart.defaults.global.tooltipYPadding = 16;
+                Chart.defaults.global.tooltipCornerRadius = 0;
+                Chart.defaults.global.tooltipTitleFontStyle = "normal";
+                Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+                Chart.defaults.global.animationEasing = "easeOutBounce";
+                Chart.defaults.global.responsive = false;
+                Chart.defaults.global.scaleLineColor = "black";
+                Chart.defaults.global.scaleFontSize = 16;
+                // get bar chart canvas
+                var mychart = document.getElementById("chart1").getContext("2d");
+                steps = 10
+                max = 20
+                // draw bar chart
+                var LineChartDemo = new Chart(mychart).Line(barData, {
+                    scaleOverride: true,
+                    scaleSteps: steps,
+                    scaleStepWidth: Math.ceil(max / steps),
+                    scaleStartValue: 0,
+                    scaleShowVerticalLines: true,
+                    scaleShowGridLines : true,
+                    barShowStroke : true,
+                    scaleShowLabels: true,
+                    bezierCurve: false,
+                });
+                </script>
+                <div style="align-content: center; width: 100%;">
+                    <form action="/append" method="post" style="margin:0 auto; display: table;">
+                        <!-- <input type="hidden" name="username" value=""> -->
+                        <input type="submit" value="AppendPanel(Feature & Discussions)" class="button-for-panel">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="bx">
+            <div style="flex: 1;">
+                <img class="imgsx" src="../static/tool.jpg" alt=""> 
+                <div><p style="font-size: 40px; text-align:center;"><a href="" class="linkk">APPEND</p></a></div>
+                <div><p style="text-align:center; font-size: 20px; word-wrap: wrap; color: #edf6ff;">“Do we need periods if they make us crazy?”, <br> Sarah asks. Hint: yes, we do. We reached <br> out to our friend Diana Roth, an endocrinologist specialised <br> in women’s hormonal health to know how menstrual cycles impact women’s brains and emotions.</p></div>
+            </div>
+            <div style="flex: 1;">
+                 <img  class="imgsx" src="../static/note.jpg" alt="">
+                <div><p style="font-size: 40px; text-align:center;"><a href="" class="linkk"> AMEND</p></a></div>
+                <div><p style="text-align:center; font-size: 20px; word-wrap: wrap; color: #edf6ff;">After years of revolution, the big question remains: why <br> aren’t there more women in leadership? Sarah and Olivia <br> get deep into the subject.</p></div>
+            </div>
+        </div>
+
+        <div class="bx2">
+             <img src="../static/stats.jpg" alt="" style="height:auto; width: 450px;"> 
+            <div style="font-size: 40px; text-align:center; padding:20px; color: #edf6ff;"> <a href="" class="linkk"> ANALYTICS</a><div><p style="text-align:center; font-size: 20px; word-wrap: wrap;">“Do we need periods if they make us crazy?”, <br> Sarah asks. Hint: yes, we do. We reached <br> out to our friend Diana Roth, an endocrinologist specialised <br> in women’s hormonal health to know how menstrual cycles impact women’s brains and emotions.</p></div>   </div>
+             
+        </div> -->
+    
+    </div>
+</body>
+</html>

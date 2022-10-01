@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="../static/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="../static/gear.css">
+        <link rel="stylesheet" href="../static/navbar.css">
+
+        <link rel="stylesheet" href="../static/aboutcontact.css">
+    </head>
+    <body>
+        <div class="bg">
+            <div class="menu-bar">
+                <a href="{{ url_for('home') }}"><img src="../static/logo-wide1.png" class="logo" alt="logo"></a>
+                <div class="menu-bar-table">
+                    <table>
+                        <tr>
+                            <td>
+                            <a href = "{{ url_for('home') }}" class = "app-bar-link">
+                                <div class="button-bg">HOME</div>
+                            </a>
+                        </td>
+                        
+                        <td>
+                            <a href = "#features" class = "app-bar-link">
+                                <div class="button-bg">FEATURES</div>
+                            </a>
+                        </td>
+                        
+
+                        <td>
+                            <a href = "#contact-us" class = "app-bar-link">
+                                <div class="button-bg">CONTACT US</div>
+                            </a>
+                        </td>
+                        
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="logup" style="flex: 1.5;"><a href="{{ url_for('login') }}" class="logup-link">LOGIN</a></div>
+                <div class="logup" style="flex: 2;"><a href="{{ url_for('signup') }}" class="logup-link">SIGN-UP</a></div>
+                <!-- <div class="logup" style="flex: 1.5;"><a href="loginform.html" class="logup-link">LOGIN</a></div>
+                <div class="logup" style="flex: 2;"><a href="signup.html" class="logup-link">SIGN-UP</a></div> -->
+                
+            </div>
+            
+
+            </div>
+
+            <div class="anim">
+                <span style="flex: 0.76;">
+                    <img src="../static/logo.png" style="height: 25vw; margin-left: 5vw;">
+                </span>
+                <div style="margin-top: 1vw;">
+                    <p class="h1">Appmend</p>
+                    <p class="h2">Where Innovations are Appendable<br>and Bugs are Amendable</p>
+                </div>
+                
+            </div>
+
+            <div class="container">
+            <div id="features" style="position: relative; top:0px;z-index: -1;" class="box"></div>
+            
+            <div class="features-box" style="margin-top: 9vh;">
+                <div class="features-sub-box">
+                    <div style="margin-left: 10vw;">
+                        <img src="../static/tool.jpg" class="feature-img">
+                        <h3 style="padding: 0.4vw; font-size: 2vw; margin-left: -1.5vw;">
+                            Amend
+                        </h3>
+                    </div>
+                    <p style="text-align: center;">
+                    
+                        A place where you can post on the handles of mainstream brands and their products.
+                    You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+                    It just doesnt stop there, we send all of the information collected by you to the developer so that it helps in making the product better for you.
+                    </p>
+                </div>
+                <div class="features-sub-box">
+                    <div style="margin-left: 10vw;">
+                        <img src="../static/note.jpg" class="feature-img">
+                        <h3 style="padding: 0.4vw; font-size: 2vw; margin-left: -1.5vw;">
+                            Append
+                        </h3>
+                    </div>
+                    <p style="text-align: center;">
+                        Some times the tools you use are just not enough or up to mark, we bring out "Append" to you, where in you can request you features to your respective developers directly.
+                    </p>
+                </div>
+                <div class="features-sub-box">
+                    <div style="margin-left: 10vw;">
+                        <img src="../static/stats.jpg" class="feature-img">
+                        <h3 style="padding: 0.4vw; font-size: 2vw; margin-left: -2vw;">
+                            Analytics
+                        </h3>
+                    </div>
+                    <p style="text-align: center;">
+                        Knowing whether the problems faced by you is being faced by other gives the user a sense of relief. At Analytics we give a graphical representation of the problems that are related to your problems so that its easier for you to analyse.
+                    </p>
+                </div>
+                <!-- <div class="features-sub-box">
+                    <div style="margin-left: 6.5vw;">
+                        <img src="../static/tool.jpg" class="feature-img">
+                        <h3 style="padding: 0.4vw;">
+                            Amend
+                        </h3>
+                    </div>
+                    <p>
+                        A place where you can post on the handles of mainstream brands and their products.
+                    You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+                    It just doesnt stop there, we send all of the information collected by you to the developer so that it helps in making the product better for you.
+                    </p>
+                </div> -->
+                
+                
+            </div>
+        </div>
+    
+        <!-- <div class="box stack-up" > -->
+
+        </div>
+    </div>
+        <div style="background-color: #1027d1; width: 100%; height: 32vw; margin-top: 10vw;">
+
+        </div>
+
+        <p style="text-align: center; margin-top: 4vw; font-weight: 900; font-size: 3vw;color: #313c90;">PROBLEMS FACED BY USERS</p>
+
+        <div class="prbfcd">
+            <!-- <h2 style="text-align: center;">problem faced by users</h2> -->
+            <div style="flex: 1; text-align: center;">
+                <h3>Irrelevent solutions provided by the Moderators</h3>
+                <p> Major companies/brands collect customer feedback via forms and mails. But generally, the company's response to it isn't quick or helpful enough.
+                    The solutions given by them either are not relevant or are just traditional irrelevant solutions.</p>
+            </div>
+            <div style="text-align: center; flex:1;">
+                <h3>User's requests are left unaddressed</h3>
+                <p>Some users expect from the developers some new desired features.
+                    But the developers are unaware of this demand of users.
+                    A few users may request a feature, but their requests are left unaddressed.</p>
+            </div>
+        </div>
+        <div style="margin-top:4vw; text-align: center; margin-left: 22vw; margin-right: 22vw;">
+            <h3>Unawareness among the users and lack of knowledge about the product</h3>
+            <p> Many users are unaware of the existing features or solutions within the product. Looking for the solution, that user hops from page to page throughout the web, and then returns empty-handed.
+                Community platforms like Reddit, Quora, etc. have users discussing the solutions, but there is an enormous bunch of information available which isn't relevant enough to the user.</p>
+        </div>
+
+        <div class="abtct">
+            <div style="flex: 1;" class="a1">
+                <h1 class="title">OUR OBJECTIVE</h1>
+                <p>Through <b>"Appmend"</b>, we want to make consumers' digital <br> lives easier by developing a universal <br> and organized platform where he/she can report <br> and discuss their issues and desires with <br> consumers of similar mindsets and look out for <br> solutions. Also, making product-developers' <br> lives easier, by generating the user <br> feedbacks and requests report and <br> sharing it with them, is our motive.</p>
+            </div>
+    
+            <div style="flex: 1;" class="a2">
+                <h1 class="title" id="contact-us">CONTACT US</h1>
+                <div >
+                    <p>
+                        Our email id: <br>
+                        support@appmend.ac.in
+                    </p>
+                    <img src="https://www.transparentpng.com/thumb/logo-instagram/mrG45j-instagram-black-logo-free-download.png" alt="">
+                    <img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-icon-black-png.png" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

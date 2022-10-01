@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/navbar.css">
+    <link rel="stylesheet" href="../static/amend.css">
+    <title>Append</title>
+</head>
+<body>
+    <div class="bg" id="bg">
+        <div class="menu-bar">
+            <a href="{{ url_for('home') }}"><img src="../static/logo-wide1.png" class="logo" alt="logo"></a>
+            <div class="menu-bar-table">
+                <table>
+                    <tr>
+                        <td>
+                            <form action="/dashboard" method="post">
+                                <div class="button-bg">
+                                    <input type="submit" value="DASHBOARD" class = "dashboard_btn" style="background-color: rgba(0,0,0,0); border: none;">
+                                </div>
+                            </form>
+                    </td>
+                    
+                    <!-- <td>
+                        <a href = "#features" class = "app-bar-link">
+                            <div class="button-bg">APPEND</div>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <div class="button-bg">APPEND</div>
+                    </td>
+                    
+                    <td>
+                        <div class="button-bg">CONTACT US</div>
+                    </td>
+                     -->
+                    </tr>
+                </table>
+            </div>
+            <span style="padding: 0.5vw; padding-top: 1vw;">Welcome : {{user_namee}} </span>
+            <div class="logup" style="flex: 1.5;">
+                <a href="{{ url_for('home') }}" class="logup-link">
+                    SIGN OUT
+                </a>
+            </div>   
+            
+        </div>
+        <!-- appbar ends here -->
+        <div class="sidebar">
+            <form action="/amend_prod" method="post">
+                <input type="radio" class="proditemradio" name="proditem" id="ad-ps" value="adobe|photoshop">
+                <label for="ad-ps" class="proditem">
+                    <button style="top:0vw;" type="submit" class="transparent" name="proditem" value="adobe|photoshop"></button>
+                    <img class='prodicon' alt="a" src="https://icons.iconarchive.com/icons/xenatt/the-circle/512/App-Adobe-Photoshop-icon.png">
+                    <span style="margin: auto;">
+                        Adobe Photoshop
+                    </span>
+                </label>
+
+                <button style="top:5.7vw;" type="submit" name="proditem" class="transparent" value="adobe|premiere"></button>
+                <input type="radio" class="proditemradio" name="proditem" id="ad-pr" value="adobe|premiere">
+                <label for="ad-pr" class="proditem">
+                    <img class='prodicon' src="https://icons.iconarchive.com/icons/killaaaron/adobe-cc-circles/1024/Adobe-Pr-icon.png">
+                    <span style="margin: auto;">
+                        Adobe Premiere
+                    </span>
+                </label>
+
+                <button style="top:11.4vw;" type="submit" name="proditem" class="transparent" value="adobe|lightroom"></button> 
+                <input type="radio" class="proditemradio" name="proditem" id="ad-lr" value="adobe|lightroom">
+                <label for="ad-lr" class="proditem">
+                    <img class='prodicon' src="data:image/png;base64,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">
+                    <span style="margin: auto;">
+                        Adobe Lightroom
+                    </span>
+                </label>
+                
+                <button style="top:17.1vw;" type="submit" name="proditem" class="transparent" value="Image-Line|FL Studio"></button> 
+                <input type="radio" class="proditemradio" name="proditem" id="ad-lr" value="Image-Line|FL Studio">
+                <label for="ad-lr" class="proditem">
+                    <img class='prodicon' src="https://i.pinimg.com/originals/ea/5b/58/ea5b5879e70251a8213ee454444b3e3c.png">
+                    <span style="margin: auto;">
+                        FL Studio
+                    </span>
+                </label>
+                
+                <button style="top:22.8vw;" type="submit" name="proditem" class="transparent" value="microsoft|word"></button> 
+                <input type="radio" class="proditemradio" name="proditem" id="ad-lr" value="adobe|lightroom">
+                <label for="ad-lr" class="proditem">
+                    <img class='prodicon' src="https://www.pngfind.com/pngs/m/678-6786741_word-logo-png-word-avanzado-circle-microsoft-word.png">
+                    <span style="margin: auto;">
+                        Microsoft Word
+                    </span>
+                </label>
+                
+                <button style="top:28.5vw;" type="submit" name="proditem" class="transparent" value="microsoft|powerpoint"></button> 
+                <input type="radio" class="proditemradio" name="proditem" id="ad-lr" value="adobe|lightroom">
+                <label for="ad-lr" class="proditem">
+                    <img class='prodicon' src="https://e1.pngegg.com/pngimages/524/968/png-clipart-microsoft-office-2013-long-shadow-icons-powerpoint-shadow-thumbnail.png">
+                    <span style="margin: auto;">
+                        Microsoft PowerPoint
+                    </span>
+                </label>
+                
+            </form>
+        </div>
+            <div class="new_forum_btn">
+                <a href="#form" class="newbtn">
+                    NEW POST
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="box" style="margin-top: 5.1vw;">
+            {%for rec in recs%}
+            <div class="forum-chat">
+                <img src="../static/tool.jpg">
+                <div class="forum-chat-body">
+                    <span class="forum-name">
+                        {{rec[0]}}
+                    </span>
+                    <span class="forum-text">
+                        <br>
+                       <b style="font-size: 1vw;">{{rec[3]}} - {{rec[4]}} : {{rec[1]}}</b>
+                       <br>
+                        {{rec[2]}}
+                    </span>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="new_forum_form_bg" id="form">
+            <div class="new_forum_form">
+                <div class="close_form_btn">
+                    <a href="{{ url_for('append') }}" class="close_x">
+                        [X]
+                    </a>
+                </div>
+                <form action="/append_add" method="post" style="padding: 1.8vw; padding-top: 0vw;">
+                    <div>
+                        <label for="products">Choose Product:</label><br>
+                        <select name="products" id="products">
+                            <optgroup label="Adobe">
+                                <option value="adobe|photoshop">Photoshop</option>
+                                <option value="adobe|premiere">Premiere</option>
+                                <option value="adobe|lightroom">Lightroom</option>
+                        </optgroup>
+                        <optgroup label="Image-Line">
+                            <option value="Image-Line|FL Studio">FL Studio</option>
+                        </optgroup>
+                        <optgroup label="Microsoft">
+                            <option value="microsoft|word">Word</option>
+                            <option value="microsoft|powerpoint">PowerPoint</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="sub">Subject of concern:</label><br>
+                    <textarea name="sub" placeholder="Subject" cols="100"></textarea>
+                </div>
+                <div>
+                    <label for="issue">Your issue:</label>
+                    <textarea name="issue" placeholder="Describe your concern..." cols="143" rows="16"></textarea>
+                </div>
+                <input type="hidden" name="form-check" value="1">
+                <input type="submit" value="Submit" style="margin:0 auto ; display: table;">
+            </form>
+        </div>
+        </div>
+    </div>
+</body>
+<!-- <div class="forum-chat">
+    <img src="../static/tool.jpg">
+    <div class="forum-chat-body">
+        <span class="forum-name">
+            Aryan Jain
+        </span>
+        <br>
+        <span class="forum-text">
+            A place where you can post on the handles of mainstream brands and their products.
+            You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+        It just doesnt stop there, we send all 
+    </span>
+</div>
+</div>
+<div class="forum-chat">
+    <img src="../static/tool.jpg">
+    <div class="forum-chat-body">
+        <span class="forum-name">
+            Aryan Jain
+        </span>
+        <br>
+        <span class="forum-text">
+            A place where you can post on the handles of mainstream brands and their products.
+            You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+        It just doesnt stop there, we send all A place where you can post on the handles of mainstream brands and their products.
+        You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+        It just doesnt stop there, we send all 
+    </span>
+</div>
+</div>
+
+<div class="forum-chat">
+    <img src="../static/tool.jpg">
+    <div class="forum-chat-body">
+        <span class="forum-name">
+            
+        </span>
+        <br>
+        <span class="forum-text">
+            <h3>qwertrewert qwertrewwer</h3>
+            A place where you can post on the handles of mainstream brands and their products.
+            You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+            It just doesnt stop there, we send all A place where you can post on the handles of mainstream brands and their products.
+            You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+            It just doesnt stop there, we send all 
+        </span>
+    </div>
+</div>
+<div class="forum-chat">
+    <img src="../static/tool.jpg">
+    <div class="forum-chat-body">
+        <span class="forum-name">
+            Aryan Jain
+        </span>
+        <br>
+        <span class="forum-text">
+            A place where you can post on the handles of mainstream brands and their products.
+            You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+        It just doesnt stop there, we send all A place where you can post on the handles of mainstream brands and their products.
+        You can post about series of problems that are being faced by you and your feedbacks and can discuss it all with other users.
+        It just doesnt stop there, we send all 
+    </span>
+</div>          -->
+</html>

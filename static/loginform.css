@@ -1,0 +1,101 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#edf6ff;  
+    font-family: 'DM Sans';  
+    font-weight: 4px;
+}  
+.login{  
+        width: 42vw;  
+        overflow: hidden;  
+        margin: auto;  
+        padding: 1vw;  
+        border: solid #D3D3D3;
+        background: white;  
+        border-radius: 1vw ;  
+        height: 32vw;
+        padding-top: 5vw;
+
+          
+}  
+h2{  
+    text-align: center;  
+    color: #437fc7;  
+    padding: 1vw;  
+}  
+label{  
+    color: #edf6ff;  
+    font-size: 1vw;  
+}  
+#Uname{  
+    width: 33vw;  
+    height: 4vw;  
+    border: none;  
+    border-radius: .5vw;  
+    padding-left: 2vw;  
+    margin-left: 3vw;
+    border: solid #D3D3D3;
+}  
+#Pass{  
+    width: 33vw;  
+    height: 4vw;  
+    border: none;  
+    border-radius: .5vw;  
+    padding-left: 2vw;
+    margin-left: 3vw;  
+    border: solid #D3D3D3;
+      
+}  
+/* #log{  
+    width: 7vw;  
+    height: 3vw;  
+    border: none;  
+    border-radius: 1vw;  
+    padding-left: 1vw;  
+    color: #437fc7; 
+    margin-left:3vw; 
+}   */
+
+#log{  
+    margin-top: 2vw;
+    width: 15vw;  
+    height: 3vw;  
+    border-radius: 1vw;  
+    padding-left: 1vw;  
+    color:#edf6ff; 
+    background-color: #6daffe;
+    border: .2vw solid #edf6ff;
+    margin-left: 13vw;
+    cursor: pointer;
+}  
+
+span{  
+    color: white;  
+    font-size: 1vw;  
+}  
+a{  
+    float: right;  
+    background-color: grey;  
+}
+.fpass{
+    color: black;
+    font-size: 1vw;
+    background-color: white;
+    padding-right: 3.5vw;
+
+}
+.namee{
+    margin-left: 3vw;
+    font-size: 1vw;
+    color:black;
+
+}
+.check{
+    margin-left: 5vw;
+}
+.lofo{
+    margin-left: 3vw;
+    font-size: 2.5vw;
+    color:black;
+}

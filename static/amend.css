@@ -1,0 +1,207 @@
+html{
+    scroll-behavior: smooth;
+    overflow-y: visible;
+    margin: 0px;
+}
+
+body{
+    /* background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7)), url("/assets/bg1.jpg"); */
+    background-color: #edf6ff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* box-shadow:inset 0 0 0 2000px rgba(24, 24, 24, 0.3); */  
+    margin: 0%;
+    color: #050a30;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    background-attachment: fixed;
+    background-position: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar{
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 20vw;
+    height: 100%;
+    z-index: 1;
+    overflow-x: hidden;
+    background-color: rgb(130, 211, 238);
+    margin-top: 5vw;
+}
+
+.prodicon{
+    height: 4vw;
+    padding: 0.5vw 0vw 0.5vw 0.5vw;
+    border-radius: 200vw;
+ 
+}
+
+.proditemradio{
+    width: 100%;
+    background-color: white;
+    display: none;
+}
+
+
+.proditem{
+    font-size: 1.2vw;
+    width: 18.8vw;
+    background-color: white;
+    display: flex;
+    margin: 0.5vw;
+    border: solid 1px rgba(0, 0, 0, 0);
+    z-index: 1;
+    box-shadow: 0px 0.5vw 3px rgba(0, 0, 0, 0.383);
+    border-radius: 0.3vw;
+}
+.proditemradio:checked + label{
+    border: solid 2 px;
+}
+
+.transparent{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    height: 5vw;
+    border:none;
+    width: 18.9vw;
+    margin: 0.5vw;
+    z-index:20;
+    background-color:rgba(196, 49, 49, 0);
+}
+
+.transparent:hover{
+    cursor: pointer;
+    scale: 1.5;
+}
+
+.transparent:hover label{
+    scale: 1.5;
+}
+
+.new_forum_btn{
+        z-index: 10;
+        float: left;
+        position: fixed;
+        bottom: 1vw;
+        background-color: white;
+        color: black;
+        margin-left: 1vw;
+        padding: 0.8vw 5.5vw 0.8vw 5.5vw;
+        border-radius: 1vw;
+}
+
+.newbtn {
+        color: black;
+        text-decoration: none;
+}
+.newbtn:visited{
+        color: black;
+        text-decoration: none;
+}
+
+.new_forum_form_bg{
+    display: none;
+    z-index: 10;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.383);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+
+.new_forum_form_bg:target{
+    animation-name: come-in;
+    animation-duration: 0.1s;
+    display: block;
+    z-index: 10;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.383);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+@keyframes come-in{
+    0%{left: -5vw; opacity: 25%;}
+    100%{left: 0px; opacity: 100%;}
+}
+
+.new_forum_form{
+    margin: auto;
+    margin-top: 3.8vw;
+    width: 95vw;
+    height: 40vw;
+    background-color: white;
+    border-radius: 1vw;
+}
+
+.new_forum_form label{
+    font-size: 1vw;
+}
+
+.close_form_btn{
+    position: relative;
+    top: 0px;
+    padding: 0.5vw;
+}
+
+.close_x:visited .new_forum_form_bg{
+    display: none;
+}
+
+.bg:target .new_forum_form_bg{
+    display: none;
+}
+
+.box{
+    width: 78.3vw;
+    height: 38vw;
+    background-color: white;
+    margin: 1vw;
+    margin-left: 20.8vw;
+    box-shadow: 0px 1vh 5px rgba(0, 0, 0, 0.383);
+    border-radius: 0.5vw;
+    overflow-y: scroll;
+    /* padding-top: 0.05vw; */
+}
+
+.forum-chat{
+    /* border: 1px solid; */
+    height: max-content;
+    display: flex;
+    margin: 1vw;
+    margin-left: 0vw;
+}
+.forum-chat img{
+    border: 1px solid;
+    height: 3vw;
+    flex: 0.9;
+    padding: 0.5vw;
+    /* margin-top: 0.3vw; */
+    border-radius: 200vw;
+}
+
+.forum-chat-body{
+    padding-top: 0.2vw;
+    flex: 22; 
+    /* border: 1px solid;  */
+    margin-left: 0vw;
+}
+
+.forum-name{
+    font-size: 1.5vw;
+}
+
+.forum-text{
+    font-size: 1vw;
+}

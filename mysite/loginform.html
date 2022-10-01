@@ -1,0 +1,34 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="../static/loginform.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
+</head>    
+<body>    
+    <h2></h2><br>    
+    <div class="login">    
+    <form id="login" method="post" action="/dashboard_from_login">
+        <label for="" class="lofo">LOG IN<span style="color: {{color}}; padding-left: 3vw; font-size: 1.5vw">{{alert}}
+        </span></label><br><br>
+        <label><b class="namee">Username     
+        </b> <br>  <br> 
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username" required>    
+        <br><br>    
+        <label><b class="namee">Password     
+        </b> <br> <br> 
+        </label>    
+        <input type="password" name="Pass" id="Pass" placeholder="Password" required>    
+        <br><br>    
+        <input type="submit" name="log" id="log" value="Login">       
+        <br><br>    
+        <br><br>    
+        <a href="#" class="fpass">Forgot Password</a>    
+    </form>     
+</div>    
+</body>    
+</html>
