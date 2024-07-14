@@ -1,10 +1,5 @@
-from cProfile import label
-from itertools import product
-from time import strftime
-from turtle import color
 from flask import *;
 import mysql.connector as sql;
-import requests;
 import datetime
 import re
 from collections import Counter;
@@ -73,6 +68,33 @@ print("CONNECTING TO DB...")
 con = sql.connect(host=DB_HOST, user=DB_USER, password=DB_PSWD, database=DB_NAME)
 print("IS CONNECTED :",con.is_connected())
 cur = con.cursor()
+cur.execute(f"use appmend$appmend;")
+
+cur.execute("""create table if not exists users(
+  username varchar(100) unique,
+  name text,
+  email text,
+  pswd text
+);""")
+cur.execute("""create table if not exists forum(
+  id int auto_increment primary key,
+  user varchar(100),
+  sub text,
+  body text,
+  added_time date,
+  brand text,
+  product text
+);""")
+cur.execute("""create table if not exists forum_append(
+  id int auto_increment primary key,
+  user varchar(100),
+  sub text,
+  body text,
+  added_time date,
+  brand text,
+  product text
+);""")
+
 
 app = Flask(__name__,template_folder="mysite",static_folder="static")
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -103,7 +125,7 @@ def loginsignup():
         return(render_template("loginform.html", color="green", alert="Signed Up! You may login now!"))
     else:
         return(render_template("signup.html", alert="Username/email already exists!"))
-    
+
 
 
 @app.route("/signup",methods=["POST","GET"])
@@ -249,6 +271,6 @@ def dashboard_from_login():
         return(render_template("loginform.html", alert="Username does not exist", color="red"))
 
 
-    
+
 if __name__=="__main__":
     app.run(debug=True)
